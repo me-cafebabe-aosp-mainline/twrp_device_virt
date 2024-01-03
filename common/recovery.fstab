@@ -1,1 +1,11 @@
-# Empty fstab file
+/dev/block/by-name/metadata /metadata f2fs nodev,noatime,nosuid wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,reserve_root=32768 wait,check,quota,formattable,fscompress,checkpoint=fs
+/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid wait,check,quota,formattable,checkpoint=block
+
+system /system ext4 rw,barrier=1,discard wait,logical
+system_ext /system_ext ext4 rw,barrier=1,discard wait,logical
+product /product ext4 rw,barrier=1,discard wait,logical
+vendor /vendor ext4 rw,barrier=1,discard wait,logical
+odm /odm ext4 rw,barrier=1,discard wait,logical
+system_dlkm /system_dlkm ext4 rw,barrier=1,discard wait,logical
+vendor_dlkm /vendor_dlkm ext4 rw,barrier=1,discard wait,logical

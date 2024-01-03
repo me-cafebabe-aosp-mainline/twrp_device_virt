@@ -1,0 +1,8 @@
+# mount point   fstype  device                      device2                     flags
+
+# Data
+/data           auto    /dev/block/by-name/userdata                             flags=fsflags="discard"
+/metadata       f2fs    /dev/block/by-name/metadata                             flags=display="Metadata";fsflags="discard"
+
+# Removable storage
+/sdcard1        auto    /dev/block/by-name/sdcard                               flags=display="MicroSD";removable;storage;wipeingui
