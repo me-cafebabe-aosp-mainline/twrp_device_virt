@@ -1,0 +1,5 @@
+on property:ro.boot.hardware=virtio
+    wait /dev/block/by-name
+    symlink /dev/block/vda /dev/block/by-name/super
+    symlink /dev/block/vdb /dev/block/by-name/metadata
+    symlink /dev/block/vdc /dev/block/by-name/userdata
